@@ -2,7 +2,10 @@
 
 ## Author
 
-Janelle Kaz  janellekaz
+Janelle Kaz 
+Username: janellekaz
+
+PhD Student | Environmental Science & Policy
 
 ## Description
 
