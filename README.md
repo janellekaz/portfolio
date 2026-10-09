@@ -9,7 +9,7 @@ PhD Student | Environmental Science & Policy
 
 ## Description
 
-My portfolio on GitHub
+My portfolio on GitHub:
 This literature review looks into the how and why 
 we research the most-studied octopus, Octopus vulgaris.
 
