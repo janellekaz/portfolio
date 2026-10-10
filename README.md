@@ -43,7 +43,8 @@ what method type they used in their research, and an invasiveness score.
 
 Coding Info:
 
-##Primary Research Category
+## Primary Research Category
+
 Each study was categorized according to its primary research category, the guiding reason the study was conducted, framed by its title, abstract, methods, and publication context. Where studies touched multiple aims, priority was given to the most explicit or dominant research domain.
 1. Neurobiology & Physiology
 Investigates nervous system function, motor pathways, sensory processing, endocrine signals, immune systems, or organ-level physiology. Includes brain mapping, neural stimulation, and hormonal manipulation.
@@ -68,18 +69,21 @@ Motivated by understanding O. vulgaris in its natural context. Includes in situ 
 11. Captive Laboratory Husbandry
 Focused on baseline care and welfare in captivity. Includes tank enrichment, stress indicators, recognition studies, and habitat design aiming to improve well-being in lab environments and aquaria.
 
-##Cognitive/Welfare Insight Coding
+## Cognitive/Welfare Insight Coding
+
 Yes: cognition, behavior, health, affective state, or welfare is an explicit aim or central interpretive purpose. 
 Incidental: the paper is about something else, but it briefly mentions or interprets findings in a way that bears on cognition, behavior, health, or welfare. 
 No: there is no meaningful connection to cognition or wellbeing.
 
-##Agency Score Definitions 
-0: None. Octopuses are treated purely as biological specimens or data points. The animal’s actions are not described in terms of choice, autonomy, or intentionality. 
-1: Low. The study mentions behavior but attributes it to automatic responses, reflexes, or physiology. There is no evidence that the animal is treated as an agent with goals, awareness, or problem-solving capacity. 
-2: Moderate. The animal is depicted as capable of initiating actions or adapting behavior in meaningful ways, but this is not the focus of the study. Agency may be inferred rather than acknowledged. 
-3: High. The study explicitly engages with the octopus as a sentient, decision-making being, through discussion of problem-solving, awareness, learning, or individual variation. 
+## Agency Score Definitions 
 
-##Primary Method Types:
+0. None. Octopuses are treated purely as biological specimens or data points. The animal’s actions are not described in terms of choice, autonomy, or intentionality. 
+1. Low. The study mentions behavior but attributes it to automatic responses, reflexes, or physiology. There is no evidence that the animal is treated as an agent with goals, awareness, or problem-solving capacity. 
+2. Moderate. The animal is depicted as capable of initiating actions or adapting behavior in meaningful ways, but this is not the focus of the study. Agency may be inferred rather than acknowledged. 
+3. High. The study explicitly engages with the octopus as a sentient, decision-making being, through discussion of problem-solving, awareness, learning, or individual variation. 
+
+## Primary Method Types:
+
 1. Active/Lethal Post-Mortem Tissue Use
 Involves the deliberate sacrifice of animals for the purpose of tissue extraction. 
 2. Captive Behavioral Experimentation
@@ -100,7 +104,7 @@ Use of deceased animals not actively killed for the study. Tissue samples may co
 Involves the temporary capture of animals for tagging, followed by release. Tracking may be passive (e.g., via environmental sensors) or involve recapture.
 
 
-##Invasiveness Scoring Framework (0, NA-PM, A–E)
+## Invasiveness Scoring Framework (0, NA-PM, A–E)
 
 To evaluate the degree of research-attributable intervention experienced by Octopus vulgaris, each study was assigned an invasiveness score adapted from the Canadian Council on Animal Care framework. Scores reflect procedures conducted for the purposes of the research rather than harms that occurred independently of the study. When multiple procedures were performed, the study was assigned the score corresponding to the most invasive research-attributable procedure.
 
