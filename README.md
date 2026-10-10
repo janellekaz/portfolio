@@ -10,21 +10,31 @@ PhD Student | Environmental Science & Policy
 ## Description
 
 My portfolio on GitHub:
+What does Octopus vulgaris want?
 This literature review looks into the how and why 
-we research the most-studied octopus, Octopus vulgaris.
+we research the most studied octopus, Octopus vulgaris.
 
 ## Project Structure
 
-- `scripts/`: R scripts for analysis
-- `results/`: Output figures and tables
+- `data/raw`: contains the *.xslx file of coded literature
+- `scripts/01_processing`: contains a single script that reads the raw data, cleans it up, and exports processed data.
+- `scripts/03_content`: contains a script that builds four figures
+- `results/img`: Output figures
 
-# Octopus_vulgaris
+
+## About the data
+
+data/processed/recent_vulgaris_clean.rds contains 101 observations of 6 variables
+data/processed/recent_vulgaris_ethical_long.rds contains 202 observations of 6 variables
 
 
-These 100 most recent studies (2023-2027) of O. vulgaris code for
-Primary Research Category, Presence of Cognitive/Welfare Insigt, Agency,
-whether they explicitly recognized welfare or ethics, such as with an ethics statemen, 
-what method type they used in their research, and how their invasiveness is scored. 
+# Octopus_vulgaris Coding Info
+
+
+These 100 most recent studies (2023-2027) of Octopus vulgaris code for
+Primary Research Category, Presence of Cognitive/Welfare Insight, Agency,
+whether they explicitly recognized welfare or ethics, such as with an ethics statement, 
+what method type they used in their research, and an invasiveness score. 
 
 Coding Info:
 Primary Research Category
