@@ -19,12 +19,22 @@ and attention to cognition, welfare, and ethical safeguards. The goal is to
 identify where scientific practices align with current understanding of 
 octopus cognition and welfare, and where gaps remain.
 
-## Project Structure
 
-- `data/raw`: contains the *.xslx file of author-coded literature
-- `scripts/01_processing`: contains a single script that reads the raw data, cleans it up, and exports processed data.
-- `scripts/03_content`: contains a script that builds four figures
-- `results/img`: Output figures
+## Repository Structure
+
+The repository contains three main folders:
+
+- `data`:
+  - `data/raw` contains the original `.xlsx` file of author-coded literature review data.
+  - `data/processed` contains the cleaned `.rds` datasets used for analysis and visualization.
+
+- `scripts`:
+  - `scripts/01_processing` contains `data_processing.R`, which reads, cleans, and exports the processed data.
+  - `scripts/02_analyses` is reserved for additional analyses.
+  - `scripts/03_content` contains `exploratory_data_visualization.R`, which generates five figures exploring research domains, methods, invasiveness, and ethical recognition.
+
+- `results`:
+  - `results/img` contains the exported figures.
 
 
 ## About the data
