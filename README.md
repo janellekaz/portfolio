@@ -2,7 +2,7 @@
 
 ## Author
 
-Janelle Kaz 
+Janelle Kaz |  janellekaz@miami.edu
 Username: janellekaz
 
 PhD Student | Environmental Science & Policy
@@ -10,13 +10,18 @@ PhD Student | Environmental Science & Policy
 ## Description
 
 My portfolio on GitHub:
-What does Octopus vulgaris want?
-This literature review looks into the how and why 
-we research the most studied octopus, Octopus vulgaris.
+What does Octopus vulgaris want? A study of the study of octopuses.
+This project examines the relationship between growing scientific evidence 
+of octopus sentience and the research practices used to study these animals. 
+Using the 101 most recent Octopus vulgaris studies indexed in Web of Science, 
+I classify research motivations, methods, invasiveness, recognition of agency, 
+and attention to cognition, welfare, and ethical safeguards. The goal is to 
+identify where scientific practices align with current understanding of 
+octopus cognition and welfare, and where gaps remain.
 
 ## Project Structure
 
-- `data/raw`: contains the *.xslx file of coded literature
+- `data/raw`: contains the *.xslx file of author-coded literature
 - `scripts/01_processing`: contains a single script that reads the raw data, cleans it up, and exports processed data.
 - `scripts/03_content`: contains a script that builds four figures
 - `results/img`: Output figures

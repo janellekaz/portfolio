@@ -7,7 +7,13 @@
 # Oct 9 2026
 #
 # Exploratory data visualization of most recent
-# O. vulgaris coded literature
+# Octopus vulgaris coded literature
+#
+# This script uses ggplot2 to explore patterns in 101 recent
+# Octopus vulgaris research papers. Figures examine research
+# domains, methods, invasiveness, agency recognition, and
+# ethical considerations.
+# All figures are exported to results/img/.
 #
 ################################################################################
 
@@ -33,10 +39,10 @@ fig1 <- vulgaris_clean |>
   geom_text(aes(label = n), hjust = -0.3, size = 3.5) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.08))) +
   coord_flip() +
-  labs(title = "Research Categories in Most Recent Octopus Vulgaris Studies",
+  labs(title = "Research Categories in Most Recent Octopus vulgaris Studies",
        x = "Research Domain",
        y = "Number of Papers",
-       caption = paste("Source: Author-coded literature review of 101 most recent Octopus vulgaris research papers from Web of Science")) +
+       caption = "Source: Author-coded literature review of 101 most recent Octopus vulgaris research papers from Web of Science") +
   theme_minimal() +
   theme(plot.title.position = "panel",
         plot.title = element_text(size = 13,
@@ -62,10 +68,9 @@ ggsave(filename = "results/img/research_categories_number_papers.png",
 ## research categories/domains?
 
 fig2 <- vulgaris_clean |>
-  filter(invasiveness %in% c("0", "A", "B", "C", "D", "E", "NA-PM")) |>
   mutate(invasiveness = factor(invasiveness,
                 levels = c("0", "A", "B", "C", "D", "E", "NA-PM"))) |>
-  ggplot(aes(reorder(domain, domain,
+  ggplot(aes(x = reorder(domain, domain,
                          function(x) -length(x)), fill = invasiveness)) +
   geom_bar(position = position_stack(reverse = TRUE)) +
   scale_fill_manual(values = c("0" = "gray",
@@ -96,6 +101,10 @@ fig2 <- vulgaris_clean |>
     legend.text = element_text(size = 10))
 
 fig2
+
+# verify that all papers are included
+vulgaris_clean |>
+  count(invasiveness, sort = TRUE)
 
 # Export #######################################################################
 ggsave(filename = "results/img/invasiveness_by_research_domain.png",
@@ -166,7 +175,7 @@ fig4 <- vulgaris_long |>
                                "Incidental" = "goldenrod")) +
   scale_x_discrete(labels = c(pcwi = "Cognitive/Welfare Insight",
                               statement = "Explicit Ethical Recognition")) +
-  labs(title = "Cognitive Insights and Ethical Recognition in Recent O. vulgaris Research",
+  labs(title = "Cognitive Insights and Ethical Recognition in Recent Octopus vulgaris Research",
        x = "Ethical Indicator",
        y = "Number of Papers",
        fill = "Recognition",
@@ -178,8 +187,12 @@ fig4 <- vulgaris_long |>
                                     color = "gray40",
                                     hjust = 0))
 fig4
+
+vulgaris_long |>
+  count(ethical_indicator, recognition)
+
     
-# Export
+# Export ################################################################
 
 ggsave(filename = "results/img/cognitive_insights_vs_ethical_recognition.png",
        plot = fig4,
@@ -188,10 +201,10 @@ ggsave(filename = "results/img/cognitive_insights_vs_ethical_recognition.png",
 
 
 #Figure 5: Agency recognition ###########################################
-## How are papers distribute across the four levels
+## How are papers distributed across the four levels
 ## of agency recognition?
 
-vulgaris_clean |>
+fig5 <- vulgaris_clean |>
   ggplot(aes(x = agency)) +
   geom_bar(fill = "cadetblue") +
   labs(title = "Recognition of Octopus Agency in Recent Research",
@@ -205,8 +218,14 @@ vulgaris_clean |>
       color = "gray40",
       hjust = 0))
 
+fig5
   
-  
+# Export ############################################################# 
+
+ggsave(filename = "results/img/agency_recognition.png",
+       plot = fig5,
+       width = 8,
+       height = 6)  
   
   
   

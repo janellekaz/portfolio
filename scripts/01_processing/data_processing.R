@@ -6,8 +6,9 @@
 # janellekaz@miami.edu
 # Oct 09 2026
 #
-# This script reads the raw CSV data from a literature review
-# and cleans it for analysis.  
+# This script imports coded literature review data from excel,
+# cleans and restructures the variables for analysis,
+# and exports tidy datasets as RDS files. 
 #
 ################################################################################
 
@@ -29,7 +30,7 @@ coded_recent <- read_excel(path = "data/raw/coded_most_recent_vulgaris.xlsx",
 dim(coded_recent) # Check dimensions
 colnames(coded_recent) # Check column names
 
-# PROCESSING ##################################################
+# PROCESSING #########################################################
 
 # The data contain 101 entries (rows) and 6 columns
 # of coding parameters. 
