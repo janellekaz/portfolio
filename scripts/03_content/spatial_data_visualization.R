@@ -45,7 +45,7 @@ octopus <- octopus |>
 country_counts <- octopus |>
   count(Country, name = "n_publications")
 
-# Check the country counts (should total 101 publications)
+# verify country counts 
 print(country_counts, n = Inf)
 sum(country_counts$n_publications)
 
@@ -60,15 +60,15 @@ world <- world |>
       "United States",
       name))
 
-# Check for country names that do not match the world dataset
+# check for country names that do not match the world dataset
 unmatched <- country_counts |>
   anti_join(
     world |> st_drop_geometry(),
     by = c("Country" = "country_name"))
 
-print(unmatched, n = Inf) # Should return 0 rows
+print(unmatched, n = Inf) # = 0 rows
 
-# Join publication counts to country boundaries
+# join publication counts to country boundaries
 world_lit <- world |>
   left_join(
     country_counts,
@@ -76,7 +76,7 @@ world_lit <- world |>
   mutate(
     n_publications = replace_na(n_publications, 0L))
 
-# Check that all 101 publications and 26 countries are represented
+# Check that all 101 publications & 26 countries are represented
 sum(world_lit$n_publications)
 
 world_lit |>
@@ -113,13 +113,13 @@ recent_map <- ggplot() +
   "Sources: Web of Science (author-coded " *
     italic("O. vulgaris") *
     " literature); Natural Earth (country boundaries)")) +
- coord_sf(         # cropped to exclude arctic and Antarctica 
-  crs = st_crs(4087),
+ coord_sf(                  # cropped to exclude arctic and Antarctica 
+  crs = st_crs(4087),       # used ESPG:4087 World Equidistant Cylindrical in meters
   xlim = c(-20037508, 20037508),
   ylim = c(-6679169, 9462157),
   expand = FALSE) +
-  # North arrow positioned above the scale bar
-annotation_north_arrow(
+  
+annotation_north_arrow(     # North arrow positioned above the scale bar from ggspatial
   location = "bl",
   which_north = "grid",
   height = unit(1.2, "cm"),
@@ -127,8 +127,8 @@ annotation_north_arrow(
   pad_x = unit(0.35, "cm"),
   pad_y = unit(1.5, "cm")) +
 
-# Add a scale bar in kilometers
-annotation_scale(
+
+annotation_scale(           # Add a scale bar in kilometers from ggspatial
   location = "bl",
   width_hint = 0.12,
   plot_unit = "m",
@@ -137,25 +137,22 @@ annotation_scale(
   pad_y = unit(0.35, "cm")) +
  theme_void() +  # remove axes and gridlines
   theme(
-    plot.background = element_rect(fill = "white",
+    plot.background = element_rect(fill = "white",  #realized I needed a white background after using the void theme
                                    color = NA),
     panel.background = element_rect(fill = "white",
                                     color = NA),
 
-    # Add a little space around the entire figure
-    plot.margin = margin(t = 20, r = 30,
+    plot.margin = margin(t = 20, r = 30,  # Add a little space around the entire figure
                          b = 20, l = 30),
 
-    # Keep title and subtitle left-aligned
-    plot.title.position = "plot",
+    plot.title.position = "plot",  # Keep title and subtitle left-aligned
     plot.caption.position = "plot",
     plot.title = element_text(hjust = 0,
                               margin = margin(b = 8)),
     plot.subtitle = element_text(hjust = 0,
                                  margin = margin(b = 12)),
 
-    # Move legend slightly left
-    legend.position = c(0.93, 0.46),
+    legend.position = c(0.93, 0.46),   # Move legend slightly left
     legend.justification = c("left", "center"))
   
   
@@ -195,6 +192,8 @@ ggsave(
 )
 
 recent_map
+
+browseURL("results/img/recent_map.png")
 
 ## The final step --------------------------------------------------------------
 
