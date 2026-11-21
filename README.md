@@ -63,9 +63,22 @@ research-associated harm.
 
 ## About the data
 
-`data/processed/recent_vulgaris_clean.rds` contains 101 observations of 6 variables
-`data/processed/recent_vulgaris_ethical_long.rds` contains 202 observations of 6 variables
+- `data/processed/recent_vulgaris_clean.rds`: Contains 101
+  observations of 7 variables, with one row per publication.
 
+- `data/processed/recent_vulgaris_ethical_long.rds`: Contains
+  202 observations of 7 variables, with two rows per
+  publication, one for each ethical indicator.
+
+### The seven variables are:
+
+  - `paper_id`
+  - `domain`
+  - `agency`
+  - `method`
+  - `invasiveness`
+  - `ethical_indicator`
+  - `recognition`
 
 # Octopus vulgaris Literature Coding Info
 
@@ -164,4 +177,7 @@ Research involves substantial or prolonged interference with the animal, includi
 
 E — Extreme Intervention
 Research involves severe procedures with substantial potential for pain, distress, injury, or prolonged impairment without appropriate anesthesia, analgesia, or other mitigation. Examples may include severe noxious stimulation, lesions, paralysis, or comparable interventions performed without adequate pain mitigation.
+
+
+
 
