@@ -25,39 +25,46 @@ research-associated harm.
 
 ### 'data/raw/coded_most_recent_vulgaris.xlsx'
 
-- 101 Most Recent O. vulgaris Articles Coded for 
-- Author Coded Literature from Web of Science
-- Downloaded: August 11 2026
+- Title of the dataset: Coding of the 101 Most Recent Octopus vulgaris Research Articles
+- Source: Author-generated coding of research articles retrieved from Web of Science. The six coding variables were assigned manually to each publication.
+- Date of literature download: August 11, 2026
 
 ### 'data/raw/Most_recent_country.xlsx'
 
-- 101 Most Recent O. vulgaris Articles by Country
-- Author Coded Literature from Web of Science
-- Downloaded: August 11 2026
+- Title of the dataset: Primary Institutional Countries of the 101 Most Recent Octopus vulgaris Research Articles
+- Source: Author-coded institutional country information for the same publications retrieved from Web of Science.
+- Date of literature download: August 11, 2026
 
 ## Repository Structure
 
-The repository contains three main folders:
+### The repository contains three main folders:
 
-- `data`:
-  - `data/raw/coded_most_recent_vulgaris`: Raw author-coded literature review data
-  - `data/raw/Most_recent_country.xlsx`: Raw author-coded literature country data
-  - `data/processed/recent_vulgaris_clean.rds`: Clean author-coded literature review data
-  - `data/processed/ethical_long.rds`: Clean
+- `data`: Contains the raw and processed author-coded literature data
+  - `data/raw/coded_most_recent_vulgaris`: Raw literature review data containing 101 publications and 6 coding variables. Read by scripts/01_processing/data_processing.R.
+  - `data/raw/Most_recent_country.xlsx`: Raw author-coded literature country data for 101 publications. Read by scripts/03_content/spatial_data_visualization.R.
+  - `data/processed/recent_vulgaris_clean.rds`: Cleaned paper-level dataset containing 101 observations and seven variables, including a unique paper identifier. Produced by scripts/01_processing/data_processing.R and used by scripts/03_content/exploratory_data_visualization.R to generate Figures 1, 2, 3, and 5 in that script.
+  - `data/processed/ethical_long.rds`: Reshaped dataset containing 202 observations and seven variables. Each of the 101 papers contributes two rows, one per ethical indicator. Produced by scripts/01_processing/data_processing.R and used by scripts/03_content/exploratory_data_visualization.R to generate Figure 4 in that script.
 
 - `scripts`:
-  - `scripts/01_processing` contains `data_processing.R`, which reads, cleans, and exports the processed data.
+  - `scripts/01_processing/data_processing.R`: Reads `data/raw/coded_most_recent_vulgaris.xlsx`, cleans, and exports the processed data to `data/processed/recent_vulgaris_clean.rds` and `data/processed/recent_vulgaris_ethical_long.rds`.
   - `scripts/02_analyses` is reserved for additional analyses.
-  - `scripts/03_content` contains `exploratory_data_visualization.R`, which generates five figures exploring research domains, methods, invasiveness, and ethical recognition.
+  - `scripts/03_content/exploratory_data_visualization.R`: Reads both processed RDS files and generates five figures exploring research domains, methods, invasiveness, and ethical recognition. Exports the five PNG figures listed below to `results/img/`.
+  - `scripts/03_content/spatial_data_visualization.R`: Reads data/raw/Most_recent_country.xlsx, standardizes country names, counts publications by country, and joins the counts to Natural Earth country boundaries. Calculates each country's share of publications and exports results/img/recent_map.png.
 
 - `results`:
-  - `results/img` contains the exported figures.
+  - `results/img`: Contains the exported figures in PNG format.
+  - `results/img/research_categories_number_papers.png`: Horizontal bar chart showing the number of publications in each primary research category. Produced by `scripts/03_content/exploratory_data_visualization.R`.
+  - `results/img/invasiveness_by_research_domain.png`: Stacked bar chart showing the distribution of invasiveness classifications across research categories. Produced by `scripts/03_content/exploratory_data_visualization.R`.
+  - `results/img/research_methods_by_domain.png`: Stacked bar chart showing the primary method types used in each research category. Produced by `scripts/03_content/exploratory_data_visualization.R`.
+  - `results/img/cognitive_insights_vs_ethical_recognition.png`: Grouped bar chart comparing the presence of cognitive/welfare insights with explicit ethics/welfare recognition. Produced by `scripts/03_content/exploratory_data_visualization.R`.
+  - `results/img/agency_recognition.png`: Bar chart showing the number of publications assigned to each of the four agency recognition scores. Produced by `scripts/03_content/exploratory_data_visualization.R`.
+  - `results/img/recent_map.png`: World map showing the geographical distribution of 101 publications across 26 primary institutional countries. Produced by `scripts/03_content/spatial_data_visualization.R`.
 
 
 ## About the data
 
-data/processed/recent_vulgaris_clean.rds contains 101 observations of 6 variables
-data/processed/recent_vulgaris_ethical_long.rds contains 202 observations of 6 variables
+`data/processed/recent_vulgaris_clean.rds` contains 101 observations of 6 variables
+`data/processed/recent_vulgaris_ethical_long.rds` contains 202 observations of 6 variables
 
 
 # Octopus vulgaris Literature Coding Info
