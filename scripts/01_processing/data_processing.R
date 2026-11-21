@@ -35,7 +35,7 @@ colnames(coded_recent) # Check column names
 # The data contain 101 entries (rows) and 6 columns
 # of coding parameters. 
 
-## Modify column names
+## Modify column names to make them shorter
 
 clean_recent <- coded_recent |>
   rename(domain = primary_research_category,
@@ -51,13 +51,13 @@ clean_recent
 # Add unique paper identifier and define categorical variables:
 
 recent_vulgaris <- clean_recent |>
-  mutate(paper_id = row_number(),
-    across(where(is.character), str_squish),
-    domain = as.factor(domain),
+  mutate(paper_id = row_number(),    # create a unique identifier for each paper
+    across(where(is.character), str_squish),    # remove unnecessary whitespace
+    domain = as.factor(domain),            # convert into categorical variables
     pcwi = as.factor(pcwi),
     agency = factor(agency,
                     levels = c(0, 1, 2, 3),
-                    ordered = TRUE),
+                    ordered = TRUE),       # creates an ordinal categorical variable
     statement = as.factor(statement),
     method = as.factor(method),
     invasiveness = as.factor(invasiveness)) |>

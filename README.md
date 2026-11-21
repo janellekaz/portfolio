@@ -1,4 +1,4 @@
-# My GitHub Portfolio for EVR 628
+# A Study of the Study of Octopuses
 
 ## Author
 
@@ -9,24 +9,41 @@ PhD Student | Environmental Science & Policy
 
 ## Description
 
-My portfolio on GitHub:
-What does Octopus vulgaris want? A study of the study of octopuses.
-This project examines the relationship between growing scientific evidence 
-of octopus sentience and the research practices used to study these animals. 
-Using the 101 most recent Octopus vulgaris studies indexed in Web of Science, 
-I classify research motivations, methods, invasiveness, recognition of agency, 
-and attention to cognition, welfare, and ethical safeguards. The goal is to 
-identify where scientific practices align with current understanding of 
-octopus cognition and welfare, and where gaps remain.
 
+The common octopus, Octopus vulgaris, is found worldwide 
+in tropical and temperate waters and has been the frequent 
+subject of scientific inquiry. Here we systematically 
+analyze 101 most recent (2023-2027) O. vulgaris research indexed in the Web of Science 
+to examine how research objectives, methods, invasiveness, 
+and representations of octopus agency and welfare have varied 
+across disciplines and time. Our analytical framework integrates 
+research characterization, methodological assessment, cognitive 
+and welfare insights, explicit ethics and welfare recognition, and 
+research-associated harm. 
+
+## Data Sources
+
+### 'data/raw/coded_most_recent_vulgaris.xlsx'
+
+- 101 Most Recent O. vulgaris Articles Coded for 
+- Author Coded Literature from Web of Science
+- Downloaded: August 11 2026
+
+### 'data/raw/Most_recent_country.xlsx'
+
+- 101 Most Recent O. vulgaris Articles by Country
+- Author Coded Literature from Web of Science
+- Downloaded: August 11 2026
 
 ## Repository Structure
 
 The repository contains three main folders:
 
 - `data`:
-  - `data/raw` contains the original `.xlsx` file of author-coded literature review data.
-  - `data/processed` contains the cleaned `.rds` datasets used for analysis and visualization.
+  - `data/raw/coded_most_recent_vulgaris`: Raw author-coded literature review data
+  - `data/raw/Most_recent_country.xlsx`: Raw author-coded literature country data
+  - `data/processed/recent_vulgaris_clean.rds`: Clean author-coded literature review data
+  - `data/processed/ethical_long.rds`: Clean
 
 - `scripts`:
   - `scripts/01_processing` contains `data_processing.R`, which reads, cleans, and exports the processed data.
